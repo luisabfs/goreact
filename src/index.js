@@ -6,42 +6,23 @@
 /* eslint-disable react/no-multi-comp */
 /* eslint-disable no-undef */
 import React, { Component, Fragment } from 'react';
-import PropTypes from 'prop-types';
 import { render } from 'react-dom';
 
-class Button extends Component {
-  render() {
-    return (
-      <a href="" onClick={this.props.onClick}>
-        {this.props.children}
-      </a>
-    );
-  }
-}
-
-Button.defaultProps = {
-  children: 'Salvar',
-};
-
-Button.propTypes = {
-  onClick: PropTypes.func.isRequired,
-  children: PropTypes.string,
-};
+import Button from './Button';
 
 class App extends Component {
-  handleClick() {
-    alert('click');
-  }
+  state = {
+    counter: 0,
+  };
+
+  handleClick = () => {
+    this.setState({ counter: this.state.counter + 1 });
+  };
 
   render() {
     return (
       <Fragment>
-        <h1>Oie</h1>
-        <Button
-          onClick={() => {
-            alert('Button 1');
-          }}
-        />
+        <h1>{this.state.counter}</h1>
         <Button onClick={this.handleClick}>Enviar</Button>
       </Fragment>
     );
