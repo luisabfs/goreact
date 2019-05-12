@@ -10,6 +10,8 @@ import { render } from 'react-dom';
 
 import Button from './Button';
 
+import './style.scss';
+
 class App extends Component {
   state = {
     counter: 0,
