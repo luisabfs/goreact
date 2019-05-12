@@ -5,29 +5,20 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable react/no-multi-comp */
 /* eslint-disable no-undef */
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import { render } from 'react-dom';
 
-import Button from './Button';
+import Header from './Header';
 
 import './style.scss';
 
 class App extends Component {
-  state = {
-    counter: 0,
-  };
-
-  handleClick = () => {
-    this.setState({ counter: this.state.counter + 1 });
-  };
+  // state = {
+  //   counter: 0,
+  // };
 
   render() {
-    return (
-      <Fragment>
-        <h1>{this.state.counter}</h1>
-        <Button onClick={this.handleClick}>Enviar</Button>
-      </Fragment>
-    );
+    return <Header />;
   }
 }
 
