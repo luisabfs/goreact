@@ -1,5 +1,4 @@
 import React from 'react';
-import path from 'path';
 import PropTypes from 'prop-types';
 
 const PostHeader = ({

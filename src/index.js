@@ -6,15 +6,12 @@
 /* eslint-disable react/no-multi-comp */
 /* eslint-disable no-undef */
 import React, { Component, Fragment } from 'react';
-import path from 'path';
 import { render } from 'react-dom';
 
 import Header from './Header';
 import Post from './Post';
 
 import './style.scss';
-
-const img = path.resolve(__dirname, '..', 'assets', 'img_1.jpg');
 
 class App extends Component {
   constructor(props) {
