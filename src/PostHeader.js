@@ -2,16 +2,14 @@ import React from 'react';
 import path from 'path';
 import PropTypes from 'prop-types';
 
-const img = path.resolve(__dirname, '..', 'assets', 'img_1.jpg');
-
 const PostHeader = ({
-  classHeader, classImg, classSpan, classUser,
+  classHeader, classImg, classSpan, classUser, data,
 }) => (
   <div className={classHeader}>
-    <img src={img} className={classImg} alt="Profile" />
+    <img src={data.img} className={classImg} alt="Profile" />
     <div className={classSpan}>
-      <h3 className={classUser}>Luísa Barros</h3>
-      <span>há 15min</span>
+      <h3 className={classUser}>{data.name}</h3>
+      <span>{data.time}</span>
     </div>
   </div>
 );
@@ -21,6 +19,7 @@ PostHeader.defaultProps = {
   classImg: 'profileImg',
   classSpan: 'headerInfo',
   classUser: 'headerUser',
+  data: {},
 };
 
 PostHeader.propTypes = {
@@ -28,6 +27,7 @@ PostHeader.propTypes = {
   classImg: PropTypes.string,
   classSpan: PropTypes.string,
   classUser: PropTypes.string,
+  data: PropTypes.objectOf(PropTypes.shape),
 };
 
 export default PostHeader;

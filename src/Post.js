@@ -3,21 +3,21 @@ import PropTypes from 'prop-types';
 
 import PostHeader from './PostHeader';
 
-const Post = ({ classContent, children }) => (
+const Post = ({ classContent, data }) => (
   <div className="postWrapper">
-    <PostHeader />
-    <div className={classContent}>{children}</div>
+    <PostHeader data={data} />
+    <div className={classContent}>{data.content}</div>
   </div>
 );
 
 Post.defaultProps = {
   classContent: 'contentWrapper',
-  children: '',
+  data: {},
 };
 
 Post.propTypes = {
   classContent: PropTypes.string,
-  children: PropTypes.string,
+  data: PropTypes.objectOf(PropTypes.shape),
 };
 
 export default Post;
